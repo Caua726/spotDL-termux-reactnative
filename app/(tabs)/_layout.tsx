@@ -1,5 +1,7 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import Entypo from '@expo/vector-icons/Entypo';
 
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
@@ -17,21 +19,30 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: 'Spotify',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+            <Entypo size={32} name={focused ? 'spotify' : 'spotify-with-circle'} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="youtube"
         options={{
-          title: 'Explore',
+          title: 'Youtube',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <Entypo size={32} name={focused ? 'youtube' : 'youtube-with-circle'} color={color} />
           ),
         }}
       />
+      <Tabs.Screen
+      name="config"
+      options={{
+        title: 'Configurações',
+        tabBarIcon: ({ color, focused }) => (
+          <Entypo size={32} name={focused ? 'tools' : 'tools'} color={color} />
+        ),
+      }}
+    />
     </Tabs>
   );
 }
